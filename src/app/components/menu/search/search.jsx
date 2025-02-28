@@ -3,10 +3,13 @@ export function Search(props) {
     <div className={`${props.className} flex justify-center items-center`}>
       <input
         placeholder="Buscar productos..."
-        className="w-1/2 rounded-l-3xl bg-slate-200 pl-4 h-10 hover:bg-[white] outline-none"
+        className="w-1/2  bg-gray-500 pl-4 h-10 outline-none md:h-7 text-[#fff]"
       ></input>
-      <button type="button" className="rounded-r-3xl w-20 bg-[#9EB3C2] h-10">
-        🔍
+      <button
+        type="button"
+        className=" w-12 bg-[#9EB3C2] h-10 md:h-7 flex justify-center items-center overflow-hidden  "
+      >
+        <img className="cover w-3/4" src="\img\menu\search.png" alt="Error" />
       </button>
     </div>
   );
