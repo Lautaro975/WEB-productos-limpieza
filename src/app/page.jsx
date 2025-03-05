@@ -14,21 +14,21 @@ export default function Home() {
       setSelectedColor(color);
     }
   };
+
   return (
-    <section className="w-full bg-zinc-900 flex justify-center items-center flex-col">
-      <picture className="w-full max-h-96">
+    <section className="w-full  bg-zinc-900 flex justify-center items-center flex-col ">
+      <picture className={`w-full md:h-[calc(100dvh-96px)]`}>
         <source media="(max-width: 600px)" srcSet="/img/home/fondoChico.png" />
         <source media="(min-width: 601px)" srcSet="/img/home/fondoGrande.png" />
         <img
-          className="w-full md:h-96 shadow-xl cover"
+          className="w-full md:h-full shadow-xl cover"
           src="/img/home/fondoChico.png"
           alt="Error al cargar"
         />
       </picture>
-
       <div
-        className="grid grid-cols-1 md:max-w-xl  gap-8 justify-center items-center 
-      pb-12 pt-12 md:  md:p-12 md:w-full"
+        className="grid grid-cols-1 gap-8 justify-center items-center 
+      pb-12 pt-12 md:p-12 md:w-full md:max-w-xl z-10"
       >
         <Aplicacion
           url="/img/home/usoPersonal.png"

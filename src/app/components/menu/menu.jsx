@@ -5,7 +5,7 @@ import { Submenu } from "./submenu/submenu";
 
 export function Menu() {
   return (
-    <nav className="bg-[#1E1E1E] w-full p-2 flex flex-col gap-4 md:gap-1 drop-shadow-[0_10px_35px_#000] ">
+    <nav className="relative bg-[#1E1E1E] w-full p-2 flex flex-col gap-4 md:gap-1 md:h-24 z-40">
       <div className="grid grid-cols-4 md:grid-cols-8">
         <Logo></Logo>
         <Market></Market>
