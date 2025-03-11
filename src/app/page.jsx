@@ -1,6 +1,7 @@
 "use client";
 import { useState } from "react";
 import Aplicacion from "./components/aplicaciones/aplicacion";
+import ImagenProducto from "@/app/components/imagenProducto/imagenProducto";
 
 export default function Home() {
   const [value, setValue] = useState(false);
@@ -26,7 +27,7 @@ export default function Home() {
           alt="Error al cargar"
         />
       </picture>
-      <div
+      <section
         className="grid grid-cols-1 gap-8 justify-center items-center 
       pb-12 pt-12 md:p-12 md:w-full md:max-w-xl z-10"
       >
@@ -58,7 +59,18 @@ export default function Home() {
           colorsombra={selectedColor}
           uso={"Perfumes"}
         />
-      </div>
+      </section>
+      <section className="flex w-full flex-col justify-center items-center pb-8 pt-4 bg-gradient-to-b from-zinc-900 to-zinc-700 gap-8">
+        <h2 className="font-[Oswald] text-white text-3xl">
+          Detalles del producto
+        </h2>
+        <div className="flex overflow-x-auto space-x-4 w-screen ">
+          <ImagenProducto idProducto="1" classProps="hover:opacity-50" />
+          <ImagenProducto idProducto="2" />
+          <ImagenProducto idProducto="3" />
+          <ImagenProducto idProducto="4" />
+        </div>
+      </section>
     </section>
   );
 }

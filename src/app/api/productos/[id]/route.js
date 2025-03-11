@@ -3,13 +3,12 @@ import pool from "@/lib/mysql";
 
 export async function GET(request, { params }) {
   try {
-    console.log(params);
-    console.log("jsad");
+    const { id } = await params;
 
     const result = await pool.query(
-      `SELECT * FROM productos WHERE id_producto=${params.id}`
+      `SELECT * FROM productos p INNER JOIN imagenes i WHERE p.id_producto=${id} && i.id_imagen = ${id}; `
     );
-    if (result.lenght == 0) {
+    if (result.length == 0) {
       return NextResponse.json(
         {
           message: "Producto no encontrado",
