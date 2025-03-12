@@ -5,11 +5,12 @@ import { Submenu } from "./submenu/submenu";
 
 export function Menu() {
   return (
-    <nav className="relative bg-[#1E1E1E] w-full p-2 flex flex-col gap-4 md:gap-1 md:h-24 z-40">
-      <div className="grid grid-cols-4 md:grid-cols-8">
+    <nav className="sticky top-0 bg-[#1E1E1E] w-full p-2 flex flex-col gap-4 h-18 sm:gap-1 sm:h-16 z-40 shadow-black shadow-lg ">
+      <div className="grid grid-cols-4 sm:grid-cols-8">
         <Logo></Logo>
+        <Search className="hidden sm:flex sm:col-start-3 sm:col-end-7"></Search>
         <Market></Market>
-        <div className="relative flex justify-center items-center mr-3 md:w-12 md:col-start-9">
+        <div className="relative flex justify-center items-center mr-3 sm:w-12 sm:col-start-9">
           <input type="checkbox" id="hamburger" className="peer hidden" />
 
           <label
@@ -21,7 +22,6 @@ export function Menu() {
           <Submenu></Submenu>
         </div>
       </div>
-      <Search className="hidden sm:flex"></Search>
     </nav>
   );
 }

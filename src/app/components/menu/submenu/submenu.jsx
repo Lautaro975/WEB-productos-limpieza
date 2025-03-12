@@ -32,16 +32,16 @@ export function Submenu() {
       <Search className="flex w-full sm:hidden " />
 
       <ul className="w-full flex flex-col justify-between items-center h-[40%] z-20 ">
-        <li className="flex justify-center p-2 w-full shadow-md bg-gray-300 hover:bg-gray-400 z-20 ">
+        <li className="flex justify-center p-2 w-full shadow-sm bg-gray-300 hover:bg-gray-400 z-20 ">
           Línea de productos
         </li>
-        <li className="flex justify-center p-2 w-full shadow-md bg-gray-300 hover:bg-gray-400 z-20">
+        <li className="flex justify-center p-2 w-full shadow-sm bg-gray-300 hover:bg-gray-400 z-20">
           Productos
         </li>
-        <li className="flex justify-center p-2 w-full shadow-md bg-gray-300 hover:bg-gray-400 z-20">
+        <li className="flex justify-center p-2 w-full shadow-sm bg-gray-300 hover:bg-gray-400 z-20">
           Empresa
         </li>
-        <li className="flex justify-center p-2 w-full shadow-md bg-gray-300 hover:bg-gray-400 z-20">
+        <li className="flex justify-center p-2 w-full shadow-sm bg-gray-300 hover:bg-gray-400 z-20">
           Contacto
         </li>
       </ul>

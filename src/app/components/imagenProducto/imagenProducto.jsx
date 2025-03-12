@@ -8,22 +8,25 @@ function ImagenProducto({ idProducto, classProps }) {
     <>
       {producto ? (
         <div
-          className={`min-w-44 flex flex-col justify-center items-center text-[#fff] ${classProps}`}
+          className={` p-2 min-w-44 flex flex-col justify-center h-full
+            items-center text-[#fff] hover:opacity-50 border-4 border-[#fff] 
+            shadow-[8px_8px_20px_black] gap-2
+            `}
         >
-          <div className="w-full ">
+          <div className="w-full sm:h-full ">
             <img
-              className="w-full cover "
+              className="w-full  sm:bg-cover sm:h-full"
               src={producto.message[0].url}
               alt="Error a cargar la imagen"
             />
           </div>
-          <h3>{producto.message[0].nombre}</h3>
-          <p>{producto.message[0].formato}</p>
+          <h3 className="sm:text-[1em]">{producto.message[0].nombre}</h3>
+          <p className="sm:text-[0.7em]">{producto.message[0].formato}</p>
           <Boton
             type="button"
             handler={() => {}}
             label="Añadir al carrito"
-            classParams="bg-blue-900 text-white px-4 py-2 rounded-3xl mt-4"
+            classParams="bg-blue-900 text-white px-4 py-2 rounded-3xl h-full "
           ></Boton>
         </div>
       ) : (
