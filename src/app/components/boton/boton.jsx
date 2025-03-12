@@ -1,7 +1,7 @@
-function Boton({ handler, type, classParams, label }) {
+function Boton({ handler, type, classParams, label, children }) {
   return (
     <button type={type} className={classParams} onClick={handler}>
-      {label}
+      {children ? children : label}
     </button>
   );
 }
