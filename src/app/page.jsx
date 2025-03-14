@@ -1,13 +1,11 @@
 "use client";
 import { useRef, useState } from "react";
 import Aplicacion from "./components/aplicaciones/aplicacion";
-import ImagenProducto from "@/app/components/imagenProducto/imagenProducto";
 import { motion } from "framer-motion";
 import { paramsAplicacion } from "./data/aplicacionParams";
 import { idProductos } from "./data/idProductosHome";
-import Boton from "./components/boton/boton";
 import Galeria from "./components/galeria/galeria";
-import Cargando from "./components/cargando/cargando";
+import Footer from "./components/footer/footer";
 
 export default function Home() {
   const [value, setValue] = useState(false);
@@ -102,6 +100,7 @@ export default function Home() {
           recorrer={recorrer}
         />
       </motion.section>
+      <Footer></Footer>
     </section>
   );
 }
