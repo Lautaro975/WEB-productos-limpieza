@@ -27,7 +27,7 @@ function ImagenProducto({ idProducto, classProps }) {
             type="button"
             handler={() => {}}
             label="Añadir al carrito"
-            classParams="bg-cyan-800 text-white px-4 py-2 rounded-3xl h-full animate-scale"
+            classParams="bg-cyan-800 text-white px-4 py-2 rounded-3xl h-full "
           ></Boton>
         </div>
       ) : (
