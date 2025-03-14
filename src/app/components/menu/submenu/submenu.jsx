@@ -1,5 +1,6 @@
 import { Search } from "@/app/components/menu/search/search";
-
+import Link from "next/link";
+import { lazy } from "react";
 export function Submenu() {
   return (
     <div
@@ -8,6 +9,7 @@ export function Submenu() {
     >
       <button className="absolute left-4 top-2 w-10">
         <img
+          loading="lazy"
           className="w-full"
           src="img/menu/nueva-cuenta.png"
           alt="Nueva cuenta"
@@ -18,13 +20,18 @@ export function Submenu() {
         className="absolute font-black right-2 top-2 cursor-pointer"
       >
         <div className="absolute right-4 top-2 w-6">
-          <img className="w-full" src="img/menu/delete.png" alt="Cerrar" />
+          <img
+            loading="lazy"
+            className="w-full"
+            src="img/menu/delete.png"
+            alt="Cerrar"
+          />
         </div>
       </label>
       <div className="flex gap-10 font-bold mt-8">
-        <a href="">Acerca de</a>
-        <a href="">Contacto</a>
-        <a href="">Asistencia</a>
+        <Link href="">Acerca de</Link>
+        <Link href="">Contacto</Link>
+        <Link href="">Asistencia</Link>
       </div>
 
       <p className="text-sm">Llama: +54 223 6697212</p>

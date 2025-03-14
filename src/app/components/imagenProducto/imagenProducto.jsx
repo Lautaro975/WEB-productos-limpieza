@@ -13,9 +13,10 @@ function ImagenProducto({ idProducto, classProps }) {
             shadow-[8px_8px_20px_black] gap-2
             `}
         >
-          <div className="w-full sm:h-full ">
+          <div className="w-full sm:h-full  ">
             <img
-              className="w-full  sm:bg-cover sm:h-full"
+              loading="lazy"
+              className="w-full  sm:bg-cover sm:h-full "
               src={producto.message[0].url}
               alt="Error a cargar la imagen"
             />
@@ -26,50 +27,14 @@ function ImagenProducto({ idProducto, classProps }) {
             type="button"
             handler={() => {}}
             label="Añadir al carrito"
-            classParams="bg-blue-900 text-white px-4 py-2 rounded-3xl h-full "
+            classParams="bg-cyan-800 text-white px-4 py-2 rounded-3xl h-full animate-scale"
           ></Boton>
         </div>
       ) : (
-        <div>"No se encontró el producto"</div>
+        <div>{error} " No se encontró el producto"</div>
       )}
     </>
   );
 }
 
 export default ImagenProducto;
-/*{message: Array(1)}
-message
-: 
-Array(1)
-0
-: 
-descripcion
-: 
-"Quick Detail con aroma a cereza, formulado para otorgar un brillo único. \nPuede ser utilizado en superficies húmedas y secas. También sirve para remover polvillo y marcas\n de pintura.Protección y brillo para la carrocería"
-formato
-: 
-"600ml + Gatillo"
-id_categoria
-: 
-1
-id_imagen
-: 
-1
-id_producto
-: 
-1
-id_uso
-: 
-1
-nombre
-: 
-"CHERRY QUICK"
-precio
-: 
-"7000.00"
-stock
-: 
-50
-url
-: 
-"imgproductosceraliquidaCherryQuick.png"*/

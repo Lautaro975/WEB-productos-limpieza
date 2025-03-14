@@ -2,6 +2,8 @@ import Logo from "./logo/logo";
 import Market from "./market/market";
 import { Search } from "./search/search";
 import { Submenu } from "./submenu/submenu";
+import { Suspense } from "react";
+import Cargando from "../cargando/cargando";
 
 export function Menu() {
   return (
@@ -19,7 +21,9 @@ export function Menu() {
           >
             ☰
           </label>
-          <Submenu></Submenu>
+          <Suspense fallback={<Cargando></Cargando>}>
+            <Submenu></Submenu>;
+          </Suspense>
         </div>
       </div>
     </nav>
