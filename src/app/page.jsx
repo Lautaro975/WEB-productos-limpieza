@@ -25,15 +25,15 @@ export default function Home() {
 
   const recorrerX = () => {
     const { scrollLeft, scrollWidth, clientWidth } = galeriaref.current;
-    if (scrollLeft + clientWidth >= scrollWidth - 200) {
+    if (scrollLeft + clientWidth >= scrollWidth - 100) {
       setX(false);
-    } else if (scrollLeft <= 200) {
+    } else if (scrollLeft <= 100) {
       setX(true);
     }
   }; //Esta funcion lo que hace cambia de estado del fullX cuando llega al principio o al final del X
   const recorrer = () => {
     if (!galeriaref.current) return;
-    const desplazamiento = 200;
+    const desplazamiento = 100;
     galeriaref.current.scrollBy({
       left: fullX ? desplazamiento : -desplazamiento,
       behavior: "smooth",
@@ -41,7 +41,7 @@ export default function Home() {
     recorrerX();
   }; //Esta funcion recorre la galeria de productos
   return (
-    <section
+    <main
       className="w-full bg-zinc-900 snap-y snap-mandatory overflow-hidden 
       flex justify-center items-center flex-col"
     >
@@ -90,7 +90,7 @@ export default function Home() {
         viewport={{ amount: 0.2 }}
         transition={{ duration: 0.5 }}
       >
-        <h2 className="font-[Oswald] text-white text-3xl">
+        <h2 className="font-[Oswald] text-white text-2xl">
           PRODUCTOS DESTACADOS
         </h2>
         <Galeria
@@ -101,6 +101,6 @@ export default function Home() {
         />
       </motion.section>
       <Footer></Footer>
-    </section>
+    </main>
   );
 }

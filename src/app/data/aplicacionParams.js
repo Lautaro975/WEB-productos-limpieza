@@ -14,9 +14,4 @@ export const paramsAplicacion = [
     color: "#FF5722",
     uso: "Uso Industrial",
   },
-  {
-    url: "/img/home/fragancia.png",
-    color: "#FFD700",
-    uso: "Perfumes",
-  },
 ];

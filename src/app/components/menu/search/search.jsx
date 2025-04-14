@@ -1,18 +1,21 @@
+"use client";
+import { useSearchParams } from "next/navigation";
 import Boton from "../../boton/boton";
 
-export function Search(props, handler) {
+export function Search({ props, propsinput, propsboton, handler }) {
+  const params = useSearchParams();
   return (
-    <div className={`${props.className} flex justify-center items-center`}>
+    <div className={`${props} flex justify-center items-center`}>
       <input
         placeholder="Buscar productos..."
-        className="w-1/2  bg-gray-500 pl-4 h-10 outline-none sm:h-7 text-[#fff]"
+        className={`${propsinput} bg-inherit border-gray-500 border-b-2 outline-none`}
       ></input>
       <Boton
         type="button"
-        classParams=" w-12 bg-[#9EB3C2] h-10 sm:h-7 flex justify-center items-center overflow-hidden "
+        classParams={`${propsboton}flex justify-center items-center overflow-hidden border-gray-500 border-b-2 `}
         handler={handler}
       >
-        <img className="cover w-3/4" src="\img\menu\search.png" alt="Error" />
+        <img className="cover w-full" src="\img\menu\search.png" alt="Error" />
       </Boton>
     </div>
   );

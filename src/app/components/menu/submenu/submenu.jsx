@@ -1,6 +1,6 @@
 import { Search } from "@/app/components/menu/search/search";
 import Link from "next/link";
-import { lazy } from "react";
+import { redesurl } from "@/app/data/redesSociales/dataRedes";
 export function Submenu() {
   return (
     <div
@@ -29,14 +29,16 @@ export function Submenu() {
         </div>
       </label>
       <div className="flex gap-10 font-bold mt-8">
-        <Link href="">Acerca de</Link>
-        <Link href="">Contacto</Link>
+        <Link href="/producto">Acerca de</Link>
+        <Link href={redesurl[0]}>Contacto</Link>
         <Link href="">Asistencia</Link>
       </div>
 
-      <p className="text-sm">Llama: +54 223 6697212</p>
-
-      <Search className="flex w-full sm:hidden " />
+      <Search
+        props="flex w-full sm:hidden "
+        propsinput="w-1/2 pl-4 h-10 sm:h-7 "
+        propsboton=" w-12 h-10 sm:h-7 "
+      />
 
       <ul className="w-full flex flex-col justify-between items-center h-[40%] z-20 ">
         <li className="flex justify-center p-2 w-full shadow-sm bg-gray-300 hover:bg-gray-400 z-20 ">
