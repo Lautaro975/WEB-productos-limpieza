@@ -6,7 +6,11 @@ const tailwindConfig = {
     "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
-    extend: {},
+    extend: {
+      fontFamily: {
+        montserrat: ["var(--font-montserrat)"],
+      },
+    },
   },
   plugins: [],
 };

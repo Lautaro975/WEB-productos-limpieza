@@ -7,7 +7,7 @@ import Cargando from "../cargando/cargando";
 
 export function Menu() {
   return (
-    <nav className="sticky top-0 bg-[#1E1E1E] w-full p-2 flex flex-col gap-4 h-18 sm:gap-1 sm:h-16 z-40 shadow-black shadow-sm ">
+    <nav className="sticky top-0  bg-[#1E1E1E] w-full p-2 flex flex-col gap-4 h-18 sm:gap-1 sm:h-16 z-40 shadow-black shadow-sm ">
       <div className="grid grid-cols-4 sm:grid-cols-8">
         <Logo></Logo>
         <Search

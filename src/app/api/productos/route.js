@@ -7,7 +7,7 @@ export async function GET(request) {
     const uso = searchParams.get("uso");
     const categoria = searchParams.get("categoria");
     const page = parseInt(searchParams.get("page") || "1");
-    const limit = parseInt(searchParams.get("limit") || "10");
+    const limit = parseInt(searchParams.get("limit") || "12");
     const offset = (page - 1) * limit;
 
     let query = `

@@ -1,13 +1,21 @@
 "use client";
 import { useRef, useState } from "react";
-import Aplicacion from "./components/aplicaciones/aplicacion";
+import Aplicacion from "./components/Aplicacion/aplicacion";
 import { motion } from "framer-motion";
 import { paramsAplicacion } from "./data/aplicacionParams";
-import { idProductos } from "./data/idProductosHome";
 import Galeria from "./components/galeria/galeria";
 import Footer from "./components/footer/footer";
+import useFetch from "./hook/useFetch/useFetch";
 
 export default function Home() {
+  let {
+    data: producto,
+    loading = true,
+    error,
+  } = useFetch(
+    `http://localhost:3000/api/productos?categoria=&uso=&page=1&limit=12`,
+    "GET"
+  );
   const [value, setValue] = useState(false);
   const [selectedColor, setSelectedColor] = useState("");
   const [fullX, setX] = useState(true);
@@ -93,12 +101,18 @@ export default function Home() {
         <h2 className="font-[Oswald] text-white text-2xl">
           PRODUCTOS DESTACADOS
         </h2>
-        <Galeria
-          galeria={galeriaref}
-          fullX={fullX}
-          idProductos={idProductos}
-          recorrer={recorrer}
-        />
+        {loading ? (
+          <h2>Cargando productos...</h2>
+        ) : (
+          <Galeria
+            galeria={galeriaref}
+            fullX={fullX}
+            recorrer={recorrer}
+            data={producto}
+            loading={loading}
+            error={error}
+          />
+        )}
       </motion.section>
       <Footer></Footer>
     </main>
