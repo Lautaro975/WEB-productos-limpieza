@@ -1,7 +1,7 @@
 import { Search } from "@/app/components/menu/search/search";
 import Link from "next/link";
 import { redesurl } from "@/app/data/redesSociales/dataRedes";
-export function Submenu() {
+export function Submenu({ data }) {
   return (
     <div
       className="fixed inset-0 h-screen hidden peer-checked:flex flex-col 
@@ -38,6 +38,7 @@ export function Submenu() {
         props="flex w-full sm:hidden "
         propsinput="w-1/2 pl-4 h-10 sm:h-7 "
         propsboton=" w-12 h-10 sm:h-7 "
+        data={data}
       />
 
       <ul className="w-full flex flex-col justify-between items-center h-[40%] z-20 ">
