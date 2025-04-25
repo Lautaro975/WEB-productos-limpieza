@@ -1,6 +1,7 @@
 import Boton from "@/app/components/boton/boton";
 
 const CardProducto = ({ producto }) => {
+  let url = producto?.url?.trim();
   return (
     <>
       {producto ? (
@@ -9,7 +10,7 @@ const CardProducto = ({ producto }) => {
             <img
               loading="lazy"
               className="h-full sm:bg-cover sm:h-full"
-              src={producto?.url}
+              src={`/${encodeURI(url)}`}
               alt="Error al cargar la imagen"
             />
           </div>
@@ -18,6 +19,9 @@ const CardProducto = ({ producto }) => {
           </h3>
           <p className="sm:text-[1em] text-[0.8em] stext-pretty text-center">
             {producto?.categoria_nombre}
+          </p>
+          <p className="sm:text-[1em] text-[0.8em] stext-pretty text-center">
+            {"$" + producto?.precio}
           </p>
           <p className="sm:text-[0.9em] text-[0.8em] text-pretty text-center">
             {producto?.formato}

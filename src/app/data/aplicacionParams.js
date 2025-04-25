@@ -2,7 +2,7 @@ export const paramsAplicacion = [
   {
     url: "/img/home/usoPersonal.png",
     color: "#007BFF",
-    uso: "Uso Personal",
+    uso: "Uso Particular",
   },
   {
     url: "/img/home/usoProfesional.png",

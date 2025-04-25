@@ -2,14 +2,12 @@
 import Boton from "../../boton/boton";
 import { useRef, useState } from "react";
 import _ from "lodash";
-import Link from "next/link";
 
 export function Search({ props, propsinput, propsboton, data }) {
   const [productosFiltrados, setProductos] = useState([]);
   const input = useRef();
   const onChange = _.debounce(() => {
     let valorInput = input.current.value.toLowerCase();
-    console.log(valorInput);
 
     if (valorInput === "" || valorInput.length === 0) {
       setProductos([]);
@@ -41,13 +39,18 @@ export function Search({ props, propsinput, propsboton, data }) {
           className={`${propsinput} bg-inherit border-gray-500 border-b-2 outline-none relative`}
         />
         {productosFiltrados.length > 0 && (
-          <div className="absolute mt-4 top-full bg-slate-800 p-4 shadow-lg z-50 w-1/2 space-y-2">
+          <div
+            className="absolute mt-4 top-full bg-zinc-800 p-4 shadow-lg z-50 w-1/2 space-y-2 rounded-lg
+          after:absolute after:top-[-15px] after:right-0  after:content[''] after:border-l-[20px] after:border-b-[20px] 
+              after:border-l-transparent after:border-b-zinc-800"
+          >
             {productosFiltrados.map((producto, index) => {
               return (
                 <div
                   className="flex items-center gap-4 text-white border-white border-[2px] rounded-md p-2"
                   key={index}
                 >
+                  {console.log(producto?.url)}
                   <img
                     src={producto ? producto?.url : ""}
                     alt="Error al cargar"

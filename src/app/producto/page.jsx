@@ -78,7 +78,7 @@ function Productos() {
               animate={{ x: 0, opacity: 1 }}
               exit={{ x: -300, opacity: 0 }}
               transition={{ type: "spring", stiffness: 300, damping: 30 }}
-              className="fixed top-0 left-0 h-screen w-1/2 sm:w-2/12 bg-zinc-900 shadow-xl text-white flex flex-col z-50"
+              className="fixed top-0 left-0 h-screen w-1/2  xl:w-2/12 bg-zinc-900 shadow-xl text-white flex flex-col z-50"
             >
               <button
                 onClick={toggleMenu}
@@ -99,12 +99,14 @@ function Productos() {
                   <Filtrar
                     tipodata={Metadata?.Categoria}
                     label="Categorias"
+                    uso={""}
                     page={1}
                     limit={12}
                   />
                   <Filtrar
                     tipodata={Metadata?.TipoUso}
-                    label="Tipo de uso"
+                    uso={"TipoUso"}
+                    label="Tipos de usos"
                     page={1}
                     limit={12}
                   />
@@ -117,7 +119,7 @@ function Productos() {
       {/* Productos */}
       <section
         className="pt-4 grid grid-cols-2 gap-4 place-items-center
-       bg-zinc-900 w-full sm:grid-cols-6  sm:gap-10 sm:p-4 sm:pt-16"
+       bg-zinc-900 w-full sm:grid-cols-[repeat(auto-fit,_minmax(250px,_1fr))] xl:gap-10 xl:p-4 xl:pt-16"
       >
         {productos.map((producto, index) => {
           return (

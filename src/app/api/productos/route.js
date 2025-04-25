@@ -4,7 +4,7 @@ import pool from "@/lib/mysql";
 export async function GET(request) {
   try {
     const { searchParams } = new URL(request.url);
-    const uso = searchParams.get("uso");
+    let uso = searchParams.get("uso");
     const categoria = searchParams.get("categoria");
     const page = parseInt(searchParams.get("page") || "1");
     const limit = parseInt(searchParams.get("limit") || "12");
