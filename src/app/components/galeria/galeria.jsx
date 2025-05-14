@@ -2,13 +2,13 @@ import CardProducto from "../cardProducto/cardProducto";
 import { motion } from "framer-motion";
 import Boton from "../boton/boton";
 
-function Galeria({ galeria, fullX, recorrer, data, loading, error }) {
+function Galeria({ galeriaref, fullX, recorrer, data, loading, error }) {
   return (
     <div className="relative w-full">
       <div
         className="flex  space-x-4 w-screen overflow-y-hidden pb-8 px-8
-          overflow-x-hidden  sm:pl-16   "
-        ref={galeria}
+          overflow-x-hidden sm:pl-16"
+        ref={galeriaref}
       >
         {data?.productos?.map((producto) => (
           <motion.div

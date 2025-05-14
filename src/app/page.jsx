@@ -5,21 +5,21 @@ import { motion } from "framer-motion";
 import { paramsAplicacion } from "./data/aplicacionParams";
 import Galeria from "./components/galeria/galeria";
 import Footer from "./components/footer/footer";
-import useFetch from "./hook/useFetch/useFetch";
-
+import { useGalleryScroll } from './hooks/useGallery/useGalleryScroll';
+import axiosInstance from "@/config/axios";
 export default function Home() {
-  let {
-    data: producto,
-    loading = true,
-    error,
-  } = useFetch(
-    `http://localhost:3000/api/productos?categoria=&uso=&page=1&limit=12`,
-    "GET"
-  );
-  const [value, setValue] = useState(false);
+
+
+  const getProductos = async () => {
+    const response = await axiosInstance.get(`/producto?categoria=&uso=&page=1&limit=12`);
+    return response.data;
+  }
+
+  const producto = getProductos();
+  
   const [selectedColor, setSelectedColor] = useState("");
-  const [fullX, setX] = useState(true);
   const galeriaref = useRef(null);
+  const { fullX, recorrer } = useGalleryScroll(galeriaref);
 
   const change = (color) => {
     if (value && selectedColor === color) {
@@ -31,23 +31,6 @@ export default function Home() {
     }
   }; //Esta funcion lo que hace es cuando el valor
 
-  const recorrerX = () => {
-    const { scrollLeft, scrollWidth, clientWidth } = galeriaref.current;
-    if (scrollLeft + clientWidth >= scrollWidth - 100) {
-      setX(false);
-    } else if (scrollLeft <= 100) {
-      setX(true);
-    }
-  }; //Esta funcion lo que hace cambia de estado del fullX cuando llega al principio o al final del X
-  const recorrer = () => {
-    if (!galeriaref.current) return;
-    const desplazamiento = 100;
-    galeriaref.current.scrollBy({
-      left: fullX ? desplazamiento : -desplazamiento,
-      behavior: "smooth",
-    });
-    recorrerX();
-  }; //Esta funcion recorre la galeria de productos
   return (
     <main
       className="w-full bg-zinc-900 snap-y snap-mandatory overflow-hidden 
@@ -109,8 +92,6 @@ export default function Home() {
             fullX={fullX}
             recorrer={recorrer}
             data={producto}
-            loading={loading}
-            error={error}
           />
         )}
       </motion.section>

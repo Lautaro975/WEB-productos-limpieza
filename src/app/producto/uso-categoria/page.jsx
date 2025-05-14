@@ -1,6 +1,6 @@
 "use client";
 
-import useFetch from "@/app/hook/useFetch/useFetch";
+import useFetch from "@/app/hooks/useFetch/useFetch";
 import { useSearchParams } from "next/navigation";
 import { useEffect, useState } from "react";
 import CardProducto from "@/app/components/cardProducto/cardProducto";

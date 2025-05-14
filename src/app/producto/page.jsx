@@ -1,6 +1,6 @@
 "use client";
 import { motion, AnimatePresence } from "framer-motion";
-import useFetch from "../hook/useFetch/useFetch";
+import useFetch from "../hooks/useFetch/useFetch";
 import Search from "../components/menu/search/search";
 import Filtrar from "../components/filtrado/filtrado";
 import { useState, useEffect } from "react";

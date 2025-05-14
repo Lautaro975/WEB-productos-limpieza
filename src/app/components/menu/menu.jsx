@@ -7,7 +7,7 @@ import { Suspense } from "react";
 import Cargando from "../cargando/cargando";
 import Link from "next/link";
 
-import useFetch from "@/app/hook/useFetch/useFetch";
+import useFetch from "@/app/hooks/useFetch/useFetch";
 
 export function Menu() {
   const {
